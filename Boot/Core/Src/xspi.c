@@ -184,7 +184,10 @@ void MX_XSPI2_Init(void)
 	hxspi2.Init.FifoThresholdByte = 4;
 	hxspi2.Init.MemoryMode = HAL_XSPI_SINGLE_MEM;
 	hxspi2.Init.MemoryType = HAL_XSPI_MEMTYPE_HYPERBUS;
-	hxspi2.Init.MemorySize = 29;
+        /* The S27KS0642 device is a 64-Mbit HyperRAM (8 MB). Using the raw
+         * enumeration value (29) was confusing and selected the 8-Gbit size.
+         * Explicitly use the HAL constant for an 8-MByte memory. */
+        hxspi2.Init.MemorySize = HAL_XSPI_SIZE_8MB;
 	hxspi2.Init.FreeRunningClock = HAL_XSPI_FREERUNCLK_DISABLE;
 	hxspi2.Init.WrapSize = HAL_XSPI_WRAP_NOT_SUPPORTED;
 	hxspi2.Init.SampleShifting = HAL_XSPI_SAMPLE_SHIFT_NONE;
