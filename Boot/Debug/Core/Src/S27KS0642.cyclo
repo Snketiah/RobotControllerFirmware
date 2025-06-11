@@ -1,0 +1,3 @@
+../Core/Src/S27KS0642.c:13:16:S27KS0642_init	3
+../Core/Src/S27KS0642.c:111:16:S27KS0642_register_read	3
+../Core/Src/S27KS0642.c:134:16:S27KS0642_register_write	3
